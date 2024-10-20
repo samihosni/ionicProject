@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title>updatePlayer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-margin">
+    <form #f="ngForm">
+      <ion-label> Nom </ion-label>
+      <ion-input [(ngModel)]="nom" required name="nom" type="text"></ion-input>
+
+      <ion-label> position </ion-label>
+      <ion-input [(ngModel)]="position" name="position" type="text"></ion-input>
+     
+      <ion-button
+        [disabled]="f.invalid"
+        (click)="onUpdate(f.value)"
+        type="submit"
+        expand="full"
+        >Update</ion-button
+      >
+
+    </form>
+  </div>
+</ion-content>

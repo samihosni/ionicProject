@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title>
+      Liste Joueurs
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-icon
+        slot="icon-only"
+        routerLink="/addPlayer"
+        name="add-circle-outline"
+      ></ion-icon>
+    </ion-buttons>
+
+  </ion-toolbar>
+ 
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="bg-img">
+    @for (player of players; track player.id) {
+      <ion-card >
+        <ion-item-sliding>
+          <ion-item>
+            <ion-label>{{player.nom}}</ion-label>
+            <p>{{ player.position }}</p>
+          </ion-item>
+
+          <ion-item-options>
+            <ion-item-option (click)="updatePlayer(player.id, player.nom, player.position)">Update </ion-item-option>
+            <ion-item-option (click)="presentAlert(player.id)" color="danger"
+              >Delete</ion-item-option
+            >
+          </ion-item-options>
+          
+        </ion-item-sliding>
+      </ion-card>
+      
+    }
+  </div>
+</ion-content>
