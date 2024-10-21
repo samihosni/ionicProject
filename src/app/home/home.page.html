@@ -18,16 +18,23 @@
 
 <ion-content [fullscreen]="true">
   <div class="bg-img">
+    
     @for (player of players; track player.id) {
-      <ion-card >
+      <ion-card style="padding: 8px 5px 0 8px;">
         <ion-item-sliding>
+          
+
           <ion-item>
-            <ion-label>{{player.nom}}</ion-label>
+            <ion-avatar>
+              <img [src]="player.image" />
+            </ion-avatar>
+            <ion-label class="ion-margin">{{player.nom}}</ion-label>
             <p>{{ player.position }}</p>
+
           </ion-item>
 
           <ion-item-options>
-            <ion-item-option (click)="updatePlayer(player.id, player.nom, player.position)">Update </ion-item-option>
+            <ion-item-option (click)="updatePlayer(player.id, player.nom, player.position, player.image)">Update </ion-item-option>
             <ion-item-option (click)="presentAlert(player.id)" color="danger"
               >Delete</ion-item-option
             >

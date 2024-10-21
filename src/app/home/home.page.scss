@@ -31,7 +31,11 @@
   height: 100%;
   width: 100%;
   //background-color: red;
-  // background-image: url("../../assets/terrain.jpg");
+  background-image: url("../../assets/terrain.jpg");
   //background-repeat: repeat-y;
   background-size: 100% 100%;
+}
+
+.ion-color-secondary {
+  --ion-color-base: #3e6211 !important;
 }

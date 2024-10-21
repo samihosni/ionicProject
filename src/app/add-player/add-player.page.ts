@@ -14,19 +14,43 @@ export class AddPlayerPage implements OnInit {
   ngOnInit() {
   }
 
+  selectedImage;
+
+  onFileSelected(event): void {
+
+    console.log(event);
+    
+    //const fileInput = event.target as HTMLInputElement;
+    const file = event.target.files?.[0];
+
+    if (file) {
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        this.selectedImage = reader.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+
+  }
+
   onSubmit(v)
   {
+    console.log('====================================');
+    console.log(this.selectedImage);
+    console.log('====================================');
     let newPlayer = v;
+    newPlayer["image"]=this.selectedImage;
     this.dataSer.addPlayer(newPlayer).subscribe({
       next: (response) => {
         console.log('====================================');
         console.log(response)
         console.log(newPlayer)
-        this.router.navigate(["/home"], {queryParams: {url: "add", id: response["name"], nom: newPlayer.nom, position: newPlayer.position}})
+        this.router.navigate(["/home"], {queryParams: {url: "add", id: response["name"], nom: newPlayer.nom, position: newPlayer.position, image: newPlayer.image}})
       },
       error: (err) => {
         console.log(err);
-        
       }
     })
   }

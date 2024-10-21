@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: '',
+    path: 'home',
     redirectTo: 'home',
     pathMatch: 'full'
   },
@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'updatePlayer',
     loadChildren: () => import('./update-player/update-player.module').then( m => m.UpdatePlayerPageModule)
+  },
+  {
+    path: '',
+    loadChildren: () => import('./authentification/authentification.module').then( m => m.AuthentificationPageModule)
   },
 ];
 

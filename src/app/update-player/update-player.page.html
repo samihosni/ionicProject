@@ -8,16 +8,21 @@
   <div class="ion-margin">
     <form #f="ngForm">
       <ion-label> Nom </ion-label>
-      <ion-input [(ngModel)]="nom" required name="nom" type="text"></ion-input>
+      <ion-input [(ngModel)]="nom" required name="nom" type="text" label-placement="floating" fill="solid"></ion-input>
 
-      <ion-label> position </ion-label>
-      <ion-input [(ngModel)]="position" name="position" type="text"></ion-input>
+      <ion-label> Position </ion-label>
+      <ion-input [(ngModel)]="position" name="position" type="text" label-placement="floating" fill="solid"></ion-input>
+
+      <ion-label> Image </ion-label>
+      <ion-input [(ngModel)]="image" name="image" type="file" label-placement="floating" fill="solid" (change)="onFileSelected($event)"></ion-input>
+
      
       <ion-button
         [disabled]="f.invalid"
         (click)="onUpdate(f.value)"
         type="submit"
         expand="full"
+        color="secondary"
         >Update</ion-button
       >
 

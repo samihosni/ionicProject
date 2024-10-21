@@ -1,0 +1,16 @@
+.ion-color-secondary {
+    --ion-color-base: #3e6211 !important;
+}
+
+.bg-img {
+    padding: 1px;
+    height: 100%;
+    width: 100%;
+    //background-color: red;
+    background-image: url("../../assets/terrain.jpg");
+    //background-repeat: repeat-y;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

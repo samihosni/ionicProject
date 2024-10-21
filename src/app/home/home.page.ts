@@ -19,7 +19,7 @@ export class HomePage {
       console.log(data);
       if(data["url"] == "add")
       {
-        this.players.push({ id: data["id"], nom: data["nom"], position: data["position"] })
+        this.players.push({ id: data["id"], nom: data["nom"], position: data["position"], image: data["image"] })
       }
       else if(data['url'] == "update")
       {
@@ -28,6 +28,7 @@ export class HomePage {
             {
               element['nom'] = data['nom'];
               element['position'] = data['position']
+              element['image'] = data['image']
             }
           
         });
@@ -82,9 +83,9 @@ export class HomePage {
     await alert.present();
   }
 
-  updatePlayer(id, nom, position)
+  updatePlayer(id, nom, position, image)
   {
-    this.router.navigate(["/updatePlayer"], {queryParams: {id: id, nom: nom, position: position}})
+    this.router.navigate(["/updatePlayer"], {queryParams: {id: id, nom: nom, position: position, image: image}})
   }
 
 }

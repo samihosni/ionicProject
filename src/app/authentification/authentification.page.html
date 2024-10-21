@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title>Authentification</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="bg-img">
+    <ion-card style="padding: 5%;" expand="full">
+      <ion-label> Login </ion-label>
+      <ion-input #login required name="login" type="text" label-placement="floating" fill="solid" ></ion-input>
+
+      <ion-label> Password </ion-label>
+      <ion-input #pass required name="password" type="password" label-placement="floating" fill="solid" ></ion-input>
+
+      <ion-button
+            (click)="onSubmit(login.value, pass.value)"
+            type="submit"
+            expand="full"
+            color="secondary"
+            >Sign in</ion-button
+      >
+    </ion-card>
+  </div>
+</ion-content>

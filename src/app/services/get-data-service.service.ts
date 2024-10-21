@@ -8,12 +8,22 @@ export class GetDataServiceService {
 
   constructor(private http: HttpClient) { }
 
+  getAdmin() 
+  {
+    return this.http.get("https://ionicproject-5f3d6-default-rtdb.firebaseio.com/admin.json")
+  }
+
   getPlayer() 
   {
     return this.http.get("https://ionicproject-5f3d6-default-rtdb.firebaseio.com/joueurs.json")
   }
 
   addPlayer(newPlayer) {
+
+    console.log('====================================');
+    console.log(newPlayer);
+    console.log('====================================');
+
     return this.http.post(
       'https://ionicproject-5f3d6-default-rtdb.firebaseio.com/joueurs.json',
       newPlayer
@@ -26,10 +36,10 @@ export class GetDataServiceService {
   }
 
 
-  updatePlayer(id, newName, newPosition)
+  updatePlayer(id, newName, newPosition, newImage)
   {
     return this.http.put(`https://ionicproject-5f3d6-default-rtdb.firebaseio.com/joueurs/${id}.json`, 
-      {nom: newName, position: newPosition});
+      {nom: newName, position: newPosition, image: newImage});
   }
 
 }
