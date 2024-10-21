@@ -23,6 +23,10 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./authentification/authentification.module').then( m => m.AuthentificationPageModule)
   },
+  {
+    path: 'detailsPlayer/:id',
+    loadChildren: () => import('./details-player/details-player.module').then( m => m.DetailsPlayerPageModule)
+  },
 ];
 
 @NgModule({

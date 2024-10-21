@@ -18,6 +18,12 @@ export class GetDataServiceService {
     return this.http.get("https://ionicproject-5f3d6-default-rtdb.firebaseio.com/joueurs.json")
   }
 
+  getPlayerById(id)
+  {
+    return this.http.get(`https://ionicproject-5f3d6-default-rtdb.firebaseio.com/joueurs/${id}.json`)
+    
+  }
+
   addPlayer(newPlayer) {
 
     console.log('====================================');
