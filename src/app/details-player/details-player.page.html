@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="secondary">
-    <ion-title>detailsPlayer</ion-title>
+    <ion-title style="font-size: large; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Player details</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
@@ -9,7 +9,8 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <strong>Details of this Player : </strong>
+  <br>
+ <ion-title>Details of <strong>{{ selectedPlayer['nom'] }} : </strong></ion-title>
     <ion-grid>
       <ion-row>
         <ion-col size="6" offset="3">
@@ -19,6 +20,6 @@
     </ion-grid>
 
     <h3 class="ion-text-center">
-      {{ selectedPlayer['nom'] }} qui a la position:  {{ selectedPlayer['position'] }} 
+      {{ selectedPlayer['nom'] }}  occupe le poste: <strong> {{ selectedPlayer['position'] }} </strong>
     </h3>
 </ion-content>

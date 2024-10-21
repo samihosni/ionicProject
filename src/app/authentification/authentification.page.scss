@@ -1,5 +1,5 @@
 .ion-color-secondary {
-    --ion-color-base: #3e6211 !important;
+    --ion-color-base: #25570a !important;
 }
 
 .bg-img {
@@ -7,10 +7,15 @@
     height: 100%;
     width: 100%;
     //background-color: red;
-    background-image: url("../../assets/terrain.jpg");
+    background-image: url("../../assets/home.jpeg");
     //background-repeat: repeat-y;
     background-size: 100% 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.log {
+    background-color: rgb(157, 238, 148);
+
 }
